@@ -1,18 +1,6 @@
 import sql from 'mssql';
 import config from '../config'
 
-/*const dbSetting = {
-    user: 'luisTali',
-    password: 'purposeStudying86',
-    server: 'localhost',
-    database: 'animals_rest_api_crud',
-    port:8686,
-    options: {
-        encrypt: false, // for azure, servicio en nube de microsoft
-        trustServerCertificate: true // change to true for local dev / self-signed certs
-      }
-}*/
-
 const dbSetting = {
     user: config.username,
     password: config.password,
