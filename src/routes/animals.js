@@ -1,7 +1,7 @@
 import {Router} from 'express';
 const router = Router();
 
-import {getAnimales,createNewAnimal} from '../controllers/animals'
+import {getAnimales,createNewAnimal,getAnimalById} from '../controllers/animals'
 
 router.get('/',getAnimales);
 
@@ -11,7 +11,7 @@ router.get('/animalitos',(req,res)=>{
 
 router.post('/',createNewAnimal);
 
-router.get('/:id',);
+router.get('/:id',getAnimalById);
 
 router.delete('/',);
 
