@@ -118,9 +118,20 @@ export const updateAnimalById = async(req,res)=>{
         return res.status(200).json({success:true,msg:`Animal con Id ${id} conocido como ${nameWanted} cambio a ${newName}, Age: ${newAge}`});
 
     } catch (error) {
-        return res.status(500).json({success:false,data:error.message});
+        return res.status(500).json({success:false,data:'Hubo un error desconocido'});
     }
     
+}
+
+export const countAnimals = async(req,res)=>{
+    try {
+        const pool = await getConnection();
+        const result = await pool.request().query(querys.countAnimals);
+        console.log(result.recordset[0].cant);
+        return res.status(200).json({success:true,data:`Cantidad de animales contados ${result.recordset[0].cant}`})
+    } catch (error) {
+        return res.status(500).json({success:false,data:error.message});
+    }
 }
 
 

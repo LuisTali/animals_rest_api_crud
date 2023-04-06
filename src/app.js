@@ -17,9 +17,4 @@ app.use(express.json())
 //Seteo la base de las rutas de animales
 app.use('/animals',animalsRoutes);
 
-
-app.get('/',(req,res)=>{
-    res.status(200).send('Here we go again')
-})
-
 export default app;
